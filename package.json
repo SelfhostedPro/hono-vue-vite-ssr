@@ -6,14 +6,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build && vite build --ssr",
-    "build:client": "vite build --ssrManifest --outDir dist/",
-    "build:server": "vite build --ssr --ssrManifest --outDir dist/",
     "preview": "NODE_ENV=production bun run dist/server.js"
   },
   "dependencies": {
+    "@elysiajs/swagger": "^0.8.5",
+    "@hono/swagger-ui": "^0.2.1",
     "@hono/vite-dev-server": "^0.8.0",
+    "@hono/zod-openapi": "^0.9.6",
+    "elysia": "^0.8.17",
     "hono": "^4.0.7",
-    "vue": "^3.3.13"
+    "vue": "^3.3.13",
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
@@ -21,6 +24,7 @@
     "@vitejs/plugin-vue": "^4.5.2",
     "glob": "^10.3.10",
     "typescript": "^5.3.3",
+    "unplugin-vue-router": "^0.8.4",
     "vite": "^5.0.10",
     "vue-tsc": "^1.8.27"
   }

@@ -2,7 +2,10 @@
   "compilerOptions": {
     "target": "ES2022",
     "useDefineForClassFields": true,
-    "types": ["vite/client"],
+    "types": [
+      "vite/client",
+      // "unplugin-vue-router/client"
+    ],
     "module": "ESNext",
     "lib": [
       "ES2022",
@@ -28,6 +31,7 @@
     "src/**/*.vue",
     "src/**/*.ts",
     "src/**/*.tsx",
+    // "src/typed-router.d.ts"
   ],
   "references": [
     {

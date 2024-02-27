@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import devServer, { defaultOptions } from '@hono/vite-dev-server'
 import vue from '@vitejs/plugin-vue'
+import vueRouter from 'unplugin-vue-router/vite'
 
 // Rollup config imports
 import { glob } from "glob"
@@ -20,10 +21,11 @@ export default defineConfig(({ isSsrBuild }) => ({
               [
                 "server.ts",
                 "src/entry-client.ts",
-                "api/**/*.ts",
-                "models/**/*.ts",
-                "services/**/*.ts",
-                "utils/**/*.ts",
+                "src/pages/**/*.vue",
+                "src/api/**/*.ts",
+                "src/models/**/*.ts",
+                "src/services/**/*.ts",
+                "src/utils/**/*.ts",
               ],
               {
                 ignore: ["**/*.d.ts", "**/*.test.ts"],
@@ -51,12 +53,16 @@ export default defineConfig(({ isSsrBuild }) => ({
     devServer({
       entry: './server.ts',
       exclude: [...defaultOptions.exclude,
+        'src/api/index.ts',
         /.*\.vue?($|\?)/,
         /^\/(public|assets|static)\/.+/,
         /.*\.(s?css|less)($|\?)/,
         /.*\.(svg|png)($|\?)/,
       ]
     }),
+    // vueRouter({
+    //   dts: 'src/typed-router.d.ts',
+    // }),
     vue(),
   ],
 }))

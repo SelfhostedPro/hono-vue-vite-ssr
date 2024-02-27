@@ -7,7 +7,9 @@
     <title>Vite + Vue + TS</title>
     <!--app-head-->
   </head>
-  <body>
+  <body style="visibility: hidden">
+    <!--Hide initially so that there's not a flash of content https://medium.com/@fbnlsr/how-to-get-rid-of-the-flash-of-unstyled-content-d6b79bf5d75f
+    this is overriden by ./src/style.css once the server is able to serve it.-->
     <div id="app"><!--app-html--></div>
     <script type="module" src="/src/entry-client.ts"></script>
   </body>
