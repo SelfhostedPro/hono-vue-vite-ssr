@@ -32,6 +32,7 @@ const app = new Hono()
 		return c.html(templateHtml.replace('<!--app-html-->', (await render()).html))
 	})
 
+console.log(`Listening on ${port}...`)
 
 export default {
 	fetch: app.fetch,
